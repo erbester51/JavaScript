@@ -41,5 +41,47 @@ if (Number.isNaN(passwordLength)) {
   return null;
  }
 
+var hasspecialCharacters = confirm('Click ok to confirm including special characters')
 
+var hasNumbers = confirm('Click ok to include numbers in your password.')
+
+var hasupperCase = confirm('Click ok to include upper case characters in your password.')
+
+var haslowerCase = confirm('Click ok to include lower case characters password.')
+
+if (
+  hasspecialCharacters === false&&
+  hasNumbers === false&&
+  haslowerCase === false&&
+  hasupperCase === false
+) {
+  alert('Please select a character type.')
+}
+var Options = {
+  length: length,
+  hasspecialCharacters: hasspecialCharacters,
+  hasNumbers: hasNumbers,
+  haslowerCase: haslowerCase,
+  hasupperCase: hasupperCase
+};
+
+return Options;
+}
+
+function getRandom(arr) {
+  var randIndex = Math.floor(Math.random() * arr.length);
+  var randElement = arr[randIndex];
+
+  return randElement;
+}
+
+function storePassword() {
+  var options = getOptions();
+  var result = [];
+
+var potentialCharacters = [];
+
+var guaranteedCharacters = [];
+
+if (!options) return null;
 }
