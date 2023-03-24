@@ -6,6 +6,8 @@ var lowerCase = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm'
 
 var upperCase = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 
+var megaArray = []
+
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
@@ -57,15 +59,16 @@ if (
 ) {
   alert('Please select a character type.')
 }
-var Options = {
-  length: length,
+var options = {
+  length: passwordLength,
   hasspecialCharacters: hasspecialCharacters,
   hasNumbers: hasNumbers,
   haslowerCase: haslowerCase,
   hasupperCase: hasupperCase
 };
 
-return Options;
+storePassword(options);
+return options;
 }
 
 function getRandom(arr) {
@@ -75,10 +78,15 @@ function getRandom(arr) {
   return randElement;
 }
 
-function storePassword() {
-  var options = getOptions();
+function storePassword(options) {
+//  var options = getOptions();
+  console.log(options);
   var result = [];
-
+if (options.hasNumbers === true){
+  console.log("Before ", megaArray);
+  megaArray = megaArray + Numbers
+  console.log("After ", megaArray);
+}
 var potentialCharacters = [];
 
 var guaranteedCharacters = [];
